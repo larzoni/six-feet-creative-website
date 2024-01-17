@@ -40,7 +40,7 @@ $purple-950: #3b0764;
 
 .toggle-button {
   border-radius: 999px;
-  background-color: $purple-500;
+  background-color: rgb(41, 41, 72);
   padding: 0.75rem;
   border: none;
   display: flex;
@@ -49,14 +49,26 @@ $purple-950: #3b0764;
   width: auto;
   cursor: pointer;
 
+  &.dark {
+    background-color: rgb(135, 135, 155);
+  }
+
   &:hover {
-    background-color: $purple-400;
+    background-color: rgb(94, 94, 157);
+
+    &.dark {
+      background-color: rgb(138, 138, 184);
+    }
   }
 
   .icon {
     height: 1rem;
     width: 1rem;
     color: white;
+
+    &.dark {
+      color: #ffffff;
+    }
   }
 }
 
@@ -75,4 +87,8 @@ $purple-950: #3b0764;
     background-color: $slate-200;
     color: $slate-950;
   }
+}
+
+a {
+  text-decoration: none;
 }

@@ -7,13 +7,13 @@ const ThemeToggleBtn = () => {
   return (
     <button
       aria-label="Toggle Dark Mode"
-      className="toggle-button"
+      className={`toggle-button ${isDarkMode ? "dark" : ""}`}
       onClick={toggleTheme}
     >
       {isDarkMode ? (
-        <MoonIcon className="icon" />
+        <MoonIcon className={`icon ${isDarkMode ? "dark" : ""}`} />
       ) : (
-        <SunIcon className="icon" />
+        <SunIcon className={`icon ${isDarkMode ? "dark" : ""}`} />
       )}
     </button>
   );

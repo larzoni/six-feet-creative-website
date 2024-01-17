@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  height: 150px;
+  gap: 20px;
+  background-color: rgb(90, 64, 64);
+  align-items: center;
+  justify-content: center;
+
+  &.dark {
+    background-color: rgb(129, 62, 11);
+    color: red;
+  }
+}
+
+.link {
+  color: rgb(255, 243, 243);
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none; /* Add this line to remove underline */
+
+  &.dark {
+    color: white;
+  }
+
+  &:hover {
+    text-decoration: underline; /* Add this line if you want underline on hover */
+  }
+}

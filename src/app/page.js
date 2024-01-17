@@ -3,18 +3,11 @@ import Image from "next/image";
 import styles from "@/app/page.module.scss";
 import { Navbar } from "@/components/Navbar/Navbar";
 import HomepageLogo from "@/components/HomepageLogo/HomepageLogo";
-import useMousePosition from "@/utils/useMousePosition";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { useTheme } from "@/context/ThemeContext";
+import Spotlight from "@/components/Spotlight/Spotlight";
+import NavLinks from "@/components/NavLinks/NavLinks";
+import { Footer } from "@/components/Footer/Footer";
 
 export default function Home() {
-  const [isHovered, setIsHovered] = useState(false);
-  const { x, y } = useMousePosition();
-  const size = isHovered ? 300 : 0;
-
-  const { isDarkMode } = useTheme();
-
   return (
     <div>
       <Navbar />
@@ -22,44 +15,9 @@ export default function Home() {
       <main className={styles.container}>
         <div className={styles.content}>
           <HomepageLogo className={styles.homepageLogo} />
-
-          <div className={styles.main}>
-            <motion.div
-              className={styles.mask}
-              animate={{
-                WebkitMaskPosition: `${x - size / 2}px ${y - size * 1.5}px`,
-                WebkitMaskSize: `${size}px`,
-              }}
-              transition={{ type: "tween", ease: "backOut", duration: 0.8 }}
-            >
-              <p
-                className={`${styles.paragraph} ${
-                  isDarkMode ? styles.dark : styles.light
-                }`}
-                onMouseEnter={() => {
-                  setIsHovered(true);
-                }}
-                onMouseLeave={() => {
-                  setIsHovered(false);
-                }}
-              >
-                A songwriter and producer - with skills that haven't been
-                replaced by AI (yet) - making good stuff if the paycheck is
-                equally good.
-              </p>
-            </motion.div>
-            <div className={styles.body}>
-              <p
-                className={`${styles.paragraph} ${
-                  isDarkMode ? styles.dark : styles.light
-                }`}
-              >
-                Hello, My name is Helena. I'm a{" "}
-                <span>six feet tall and creative </span>creator - with passion
-                for writing and producing both pop- and production music.
-              </p>
-            </div>
-          </div>
+          <NavLinks />
+          <Spotlight />
+          <Footer />
         </div>
 
         <div className={styles.imageWrapper}>

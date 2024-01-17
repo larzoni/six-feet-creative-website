@@ -1,35 +1,76 @@
 .main {
-  height: 100vh;
+  position: relative;
+  width: 100%;
+  margin: 0rem auto;
+  background-color: #6f585524;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  height: 100%; /* Ensure the .main container takes up full height */
+}
 
-  .mask,
-  .body {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column; // Added to stack .mask and .body vertically
-    align-items: center;
-    justify-content: center;
-    color: #afa18f;
-    font-size: 64px;
-    line-height: 66px;
-    cursor: default;
+.mask,
+.body {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-size: 24px; /* Adjust font size as needed */
+  line-height: 40px; /* Adjust line height as needed */
+  cursor: default;
+  overflow: hidden;
+}
 
-    p {
-      width: 500px;
-      padding: 40px;
-      margin: 0; // Remove default margin to ensure elements are stacked properly
-    }
+.mask {
+  mask-image: url("/ellipse.svg");
+  mask-repeat: no-repeat;
+  mask-size: 200px;
+  background: #6f5855;
+  position: absolute;
+  z-index: 1;
+}
 
-    span {
-      color: #ec4e39;
-    }
+.paragraph {
+  max-width: 400px; /* Adjust max-width as needed */
+  padding: 20px; /* Adjust padding as needed */
+  margin: 0;
+  font-size: 22px;
+
+  &.light {
+    color: black;
   }
 
-  .mask {
-    mask-image: url("/ellipse.svg");
-    mask-repeat: no-repeat;
-    mask-size: 40px;
-    background: #ec4e39;
-    color: black;
+  &.dark {
+    color: white;
+  }
+
+  & span {
+    color: #eebe87;
+  }
+}
+.paragraphMask {
+  max-width: 400px; /* Adjust max-width as needed */
+  padding: 20px; /* Adjust padding as needed */
+  margin: 0;
+  font-size: 22px;
+
+  &.light {
+    color: rgb(255, 255, 255);
+  }
+
+  &.dark {
+    color: white;
+  }
+
+  & span {
+    color: #690247;
   }
 }

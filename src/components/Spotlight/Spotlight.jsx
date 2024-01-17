@@ -1,23 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "@/components/Spotlight/Spotlight.module.scss";
+import useMousePosition from "@/utils/useMousePosition";
+import { useTheme } from "@/context/ThemeContext";
 
 const Spotlight = () => {
-  console.log("hello");
+  const [isHovered, setIsHovered] = useState(false);
+  const { x, y } = useMousePosition();
+  const size = isHovered ? 350 : 0;
+
+  const { isDarkMode } = useTheme();
+
   return (
     <div className={styles.main}>
-      <div className={styles.mask}>
-        <p className={styles.paragraph}>
+      <motion.div
+        className={styles.mask}
+        animate={{
+          WebkitMaskPosition: `${x - size / 2}px ${y - size * 1.7}px`,
+          WebkitMaskSize: `${size}px`,
+        }}
+        transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
+      >
+        <p
+          className={`${styles.paragraphMask} ${
+            isDarkMode ? styles.dark : styles.light
+          }`}
+          onMouseEnter={() => {
+            setIsHovered(true);
+          }}
+          onMouseLeave={() => {
+            setIsHovered(false);
+          }}
+        >
           A songwriter and producer - with skills that haven't been replaced by
           AI (yet) - making good stuff if the paycheck is equally good.
         </p>
-        <div className={styles.body}>
-          <p className={styles.paragraph}>
-            Hello, I'm Helena! I'm a
-            <span className={styles.highlight}>six feet tall and creative</span>
-            creator - with passion for writing and producing both pop- and
-            production music.
-          </p>
-        </div>
+      </motion.div>
+      <div className={styles.body}>
+        <p
+          className={`${styles.paragraph} ${
+            isDarkMode ? styles.dark : styles.light
+          }`}
+        >
+          Hello, My name is Helena.<br></br> I'm a <span>six feet</span> tall
+          and <span> creative </span>creator - with passion for writing and
+          producing both pop- and production music.
+        </p>
       </div>
     </div>
   );

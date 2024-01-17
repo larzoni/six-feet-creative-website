@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  height: 150px;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+
+  &.dark {
+    color: red;
+  }
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+  color: rgba(0, 0, 0, 0.599);
+
+  &:hover {
+    color: black;
+  }
+
+  &.dark {
+    color: rgba(255, 255, 255, 0.654);
+
+    &:hover {
+      color: white;
+    }
+  }
+}
