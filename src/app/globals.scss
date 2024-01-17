@@ -38,40 +38,6 @@ $purple-950: #3b0764;
   }
 }
 
-.toggle-button {
-  border-radius: 999px;
-  background-color: rgb(41, 41, 72);
-  padding: 0.75rem;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  cursor: pointer;
-
-  &.dark {
-    background-color: rgb(135, 135, 155);
-  }
-
-  &:hover {
-    background-color: rgb(94, 94, 157);
-
-    &.dark {
-      background-color: rgb(138, 138, 184);
-    }
-  }
-
-  .icon {
-    height: 1rem;
-    width: 1rem;
-    color: white;
-
-    &.dark {
-      color: #ffffff;
-    }
-  }
-}
-
 a {
   text-decoration: none;
 }
