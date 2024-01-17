@@ -60,6 +60,15 @@
   max-width: 600px; /* Adjust max-width as needed */
   padding: 20px; /* Adjust padding as needed */
   margin: 0;
+  font-size: 30px;
+
+  &.light {
+    color: black;
+  }
+
+  &.dark {
+    color: white;
+  }
 }
 
 .highlight {

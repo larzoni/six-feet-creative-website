@@ -6,11 +6,14 @@ import HomepageLogo from "@/components/HomepageLogo/HomepageLogo";
 import useMousePosition from "@/utils/useMousePosition";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
   const size = isHovered ? 300 : 0;
+
+  const { isDarkMode } = useTheme();
 
   return (
     <div>
@@ -30,7 +33,9 @@ export default function Home() {
               transition={{ type: "tween", ease: "backOut", duration: 0.8 }}
             >
               <p
-                className={styles.paragraph}
+                className={`${styles.paragraph} ${
+                  isDarkMode ? styles.dark : styles.light
+                }`}
                 onMouseEnter={() => {
                   setIsHovered(true);
                 }}
@@ -44,7 +49,11 @@ export default function Home() {
               </p>
             </motion.div>
             <div className={styles.body}>
-              <p className={styles.paragraph}>
+              <p
+                className={`${styles.paragraph} ${
+                  isDarkMode ? styles.dark : styles.light
+                }`}
+              >
                 Hello, My name is Helena. I'm a{" "}
                 <span>six feet tall and creative </span>creator - with passion
                 for writing and producing both pop- and production music.
