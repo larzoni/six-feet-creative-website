@@ -1,0 +1,35 @@
+.main {
+  height: 100vh;
+
+  .mask,
+  .body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; // Added to stack .mask and .body vertically
+    align-items: center;
+    justify-content: center;
+    color: #afa18f;
+    font-size: 64px;
+    line-height: 66px;
+    cursor: default;
+
+    p {
+      width: 500px;
+      padding: 40px;
+      margin: 0; // Remove default margin to ensure elements are stacked properly
+    }
+
+    span {
+      color: #ec4e39;
+    }
+  }
+
+  .mask {
+    mask-image: url("/ellipse.svg");
+    mask-repeat: no-repeat;
+    mask-size: 40px;
+    background: #ec4e39;
+    color: black;
+  }
+}

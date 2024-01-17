@@ -1,95 +1,67 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import Image from "next/image";
+import styles from "@/app/page.module.scss";
+import { Navbar } from "@/components/Navbar/Navbar";
+import HomepageLogo from "@/components/HomepageLogo/HomepageLogo";
+import useMousePosition from "@/utils/useMousePosition";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Home() {
+  const [isHovered, setIsHovered] = useState(false);
+  const { x, y } = useMousePosition();
+  const size = isHovered ? 300 : 0;
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <Navbar />
+
+      <main className={styles.container}>
+        <div className={styles.content}>
+          <HomepageLogo className={styles.homepageLogo} />
+
+          <div className={styles.main}>
+            <motion.div
+              className={styles.mask}
+              animate={{
+                WebkitMaskPosition: `${x - size / 2}px ${y - size * 1.5}px`,
+                WebkitMaskSize: `${size}px`,
+              }}
+              transition={{ type: "tween", ease: "backOut", duration: 0.8 }}
+            >
+              <p
+                className={styles.paragraph}
+                onMouseEnter={() => {
+                  setIsHovered(true);
+                }}
+                onMouseLeave={() => {
+                  setIsHovered(false);
+                }}
+              >
+                A songwriter and producer - with skills that haven't been
+                replaced by AI (yet) - making good stuff if the paycheck is
+                equally good.
+              </p>
+            </motion.div>
+            <div className={styles.body}>
+              <p className={styles.paragraph}>
+                Hello, My name is Helena. I'm a{" "}
+                <span>six feet tall and creative </span>creator - with passion
+                for writing and producing both pop- and production music.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        <div className={styles.imageWrapper}>
+          <Image
+            src="/background.png"
+            alt="Picture of the author"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+      </main>
+    </div>
+  );
 }
