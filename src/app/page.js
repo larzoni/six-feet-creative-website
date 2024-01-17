@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import styles from "@/app/page.module.scss";
-import { Navbar } from "@/components/Navbar/Navbar";
 import HomepageLogo from "@/components/HomepageLogo/HomepageLogo";
 import Spotlight from "@/components/Spotlight/Spotlight";
 import NavLinks from "@/components/NavLinks/NavLinks";
 import { Footer } from "@/components/Footer/Footer";
+import { Navbar } from "@/components/Navbar/Navbar";
 
 export default function Home() {
   return (

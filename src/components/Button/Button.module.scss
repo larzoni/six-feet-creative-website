@@ -1,0 +1,32 @@
+.button {
+  background-color: rgb(41, 41, 72);
+  padding: 1rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  cursor: pointer;
+
+  &.dark {
+    background-color: rgb(4, 4, 152);
+  }
+
+  &:hover {
+    background-color: rgb(94, 94, 157);
+
+    &.dark {
+      background-color: rgb(138, 138, 184);
+    }
+  }
+
+  .icon {
+    height: 2rem;
+    width: 2rem;
+    color: white;
+
+    &.dark {
+      color: #ffffff;
+    }
+  }
+}

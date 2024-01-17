@@ -1,6 +1,6 @@
 import React from "react";
-import ThemeToggleBtn from "../ThemeToggleBtn/ThemeToggleBtn";
 import styles from "@/components/Navbar/Navbar.module.scss";
+import { ThemeToggleBtn } from "../ThemeToggleBtn/ThemeToggleBtn";
 
 export const Navbar = () => {
   return (

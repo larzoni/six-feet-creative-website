@@ -13,17 +13,17 @@ const NavLinks = () => {
           HOME
         </span>
       </Link>
-      <Link href="">
+      <Link href="/music">
         <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
           MUSIC
         </span>
       </Link>
-      <Link href="">
+      <Link href="/about">
         <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
           ABOUT ME
         </span>
       </Link>
-      <Link href="">
+      <Link href="/contact">
         <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
           CONTACT
         </span>

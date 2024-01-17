@@ -72,23 +72,6 @@ $purple-950: #3b0764;
   }
 }
 
-.card {
-  overflow: hidden;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-
-  &.light {
-    background-color: $slate-600;
-    color: $slate-200;
-  }
-
-  &.dark {
-    background-color: $slate-200;
-    color: $slate-950;
-  }
-}
-
 a {
   text-decoration: none;
 }

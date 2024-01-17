@@ -1,0 +1,24 @@
+.container {
+  position: relative;
+}
+
+.cards {
+  position: relative;
+}
+
+.imageWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  z-index: -1;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}

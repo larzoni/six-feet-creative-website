@@ -3,6 +3,7 @@ import "./globals.scss";
 import { ThemeProvider } from "@/context/ThemeContext";
 import ThemeToggleBtn from "@/components/ThemeToggleBtn/ThemeToggleBtn";
 import { Navbar } from "@/components/Navbar/Navbar";
+import NavLinks from "@/components/NavLinks/NavLinks";
 
 const inter = Inter({ subsets: ["latin"] });
 

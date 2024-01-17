@@ -7,7 +7,7 @@ import { useTheme } from "@/context/ThemeContext";
 const Spotlight = () => {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isHovered ? 350 : 0;
+  const size = isHovered ? 375 : 0;
 
   const { isDarkMode } = useTheme();
 
@@ -16,7 +16,7 @@ const Spotlight = () => {
       <motion.div
         className={styles.mask}
         animate={{
-          WebkitMaskPosition: `${x - size / 2}px ${y - size * 1.7}px`,
+          WebkitMaskPosition: `${x - size / 2}px ${y - size * 1.6}px`,
           WebkitMaskSize: `${size}px`,
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.5 }}

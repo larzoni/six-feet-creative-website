@@ -1,10 +1,11 @@
 .container {
   display: flex;
-  height: 150px;
+  padding: 2rem;
   gap: 20px;
   background-color: rgb(90, 64, 64);
   align-items: center;
   justify-content: center;
+  width: 100%;
 
   &.dark {
     background-color: rgb(129, 62, 11);
