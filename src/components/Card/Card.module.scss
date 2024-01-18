@@ -1,4 +1,4 @@
-@import "../../app/styles/_media-queries.scss";
+@import "../../styles/_media-queries.scss";
 
 .cardContainer {
   height: 100vh;
@@ -13,13 +13,15 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 2%;
+    top: 5%;
     height: 500px;
     width: 1000px;
     border-radius: 5px;
     padding: 50px;
     transform-origin: top;
-    margin: 1rem;
+    margin: 3rem;
+    background-color: #a88b8b;
+
     h2 {
       text-align: center;
       margin: 0px;

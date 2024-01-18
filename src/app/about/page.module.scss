@@ -1,9 +1,43 @@
+@import "../../styles/_media-queries.scss";
+
 .container {
   position: relative;
 }
 
 .cards {
   position: relative;
+  margin-top: 25vh;
+  @include small-screen {
+    margin-top: 20vh;
+  }
+}
+
+.headerWrapper {
+  position: fixed;
+  margin-top: -10vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  h1 {
+    font-size: 30px;
+  }
+
+  @include small-screen {
+    margin-top: -5vh;
+  }
+}
+
+.header {
+  margin-top: 2rem;
+  align-self: center;
+
+  @include small-screen {
+    max-width: 300px;
+  }
 }
 
 .imageWrapper {
@@ -13,6 +47,13 @@
   width: 40%;
   height: 100%;
   z-index: -1;
+  @include small-screen {
+    display: none;
+  }
+
+  @include medium-screen {
+    width: 30%;
+  }
 }
 
 .nav {
@@ -21,4 +62,23 @@
   left: 0;
   width: 100%;
   z-index: 2;
+}
+
+.arrowDown {
+  margin-top: 2rem;
+  width: 40px;
+  height: 40px;
+  animation: jumpInfinite 1.5s infinite;
+}
+
+@keyframes jumpInfinite {
+  0% {
+    margin-top: 5rem;
+  }
+  50% {
+    margin-top: 6rem;
+  }
+  100% {
+    margin-top: 5rem;
+  }
 }

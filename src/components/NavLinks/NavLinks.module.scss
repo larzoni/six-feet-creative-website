@@ -1,20 +1,31 @@
+@import "../../styles/_media-queries.scss";
+
 .container {
   display: flex;
   padding: 2rem;
   gap: 20px;
-  background-color: rgb(90, 64, 64);
+  background-color: rgb(198, 198, 198);
   align-items: center;
   justify-content: center;
   width: 100%;
 
   &.dark {
     background-color: rgb(129, 62, 11);
-    color: red;
+  }
+
+  @include small-screen {
+    font-size: 14px;
+    padding: 1.5rem;
+    gap: 1rem;
+
+    &.dark {
+      background-color: rgb(129, 62, 11);
+    }
   }
 }
 
 .link {
-  color: rgb(255, 243, 243);
+  color: black;
   font-size: 16px;
   padding: 10px;
   text-decoration: none; /* Add this line to remove underline */
@@ -25,5 +36,10 @@
 
   &:hover {
     text-decoration: underline; /* Add this line if you want underline on hover */
+  }
+
+  @include small-screen {
+    font-size: 14px;
+    padding: 2px;
   }
 }

@@ -1,3 +1,5 @@
+@import "../../styles/_media-queries.scss";
+
 .main {
   position: relative;
   width: 100%;
@@ -8,6 +10,12 @@
   align-items: center; /* Center content horizontally */
   justify-content: center; /* Center content vertically */
   height: 100%; /* Ensure the .main container takes up full height */
+  @include small-screen {
+    background-color: #94a3b8fa;
+    &.dark {
+      background-color: #020617;
+    }
+  }
 }
 
 .mask,
@@ -23,10 +31,13 @@
   align-items: center;
   justify-content: center;
   color: #000000;
-  font-size: 24px; /* Adjust font size as needed */
-  line-height: 40px; /* Adjust line height as needed */
+  line-height: 40px;
   cursor: default;
   overflow: hidden;
+
+  @include small-screen {
+    line-height: 2rem;
+  }
 }
 
 .mask {
@@ -39,10 +50,10 @@
 }
 
 .paragraph {
-  max-width: 400px; /* Adjust max-width as needed */
-  padding: 20px; /* Adjust padding as needed */
+  max-width: 25rem; /* Adjust max-width as needed */
+  padding: 1.25rem; /* Adjust padding as needed */
   margin: 0;
-  font-size: 22px;
+  font-size: 1.375rem;
 
   &.light {
     color: black;
@@ -50,10 +61,18 @@
 
   &.dark {
     color: white;
+
+    & span {
+      color: #f38609;
+    }
   }
 
   & span {
-    color: #eebe87;
+    color: #4d2b03;
+  }
+  @include small-screen {
+    font-size: 1.125rem;
+    max-width: 300;
   }
 }
 .paragraphMask {
@@ -72,5 +91,9 @@
 
   & span {
     color: #690247;
+  }
+  @include small-screen {
+    font-size: 1.125rem;
+    max-width: 300px; /* Adjust max-width as needed */
   }
 }

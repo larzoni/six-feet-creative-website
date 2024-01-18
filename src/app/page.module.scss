@@ -1,21 +1,47 @@
+@import "../styles/_media-queries.scss";
+
 .container {
   display: flex;
   height: 100vh;
+
+  @include small-screen {
+    flex-direction: column;
+    background: url("/background.png") center/cover no-repeat;
+  }
 }
 
 .imageWrapper {
   width: 40vw;
   max-height: 100vh;
   position: relative;
+
+  @include small-screen {
+    display: none;
+  }
 }
+
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Vertically center the content */
+
+  @include small-screen {
+    height: 100%;
+  }
 }
 
-// Add styles for HomepageLogo as needed
 .homepageLogo {
   margin-top: 2rem; // Adjust as needed
+
+  @include small-screen {
+    // Adjust the size for small screens
+    width: 80%; // You can adjust the percentage accordingly
+  }
+}
+
+.navLinks {
+  @include small-screen {
+    width: 100%; // Take up the full width on small screens
+  }
 }

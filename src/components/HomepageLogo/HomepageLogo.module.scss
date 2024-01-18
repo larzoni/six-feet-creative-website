@@ -1,3 +1,5 @@
+@import "../../styles/_media-queries.scss";
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -8,4 +10,8 @@
   width: 30rem;
   height: auto;
   margin: 4rem 0rem 2rem 0rem;
+
+  @include small-screen {
+    width: 20rem;
+  }
 }

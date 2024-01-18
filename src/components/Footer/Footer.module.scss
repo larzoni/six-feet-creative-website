@@ -1,3 +1,5 @@
+@import "../../styles/_media-queries.scss";
+
 .container {
   display: flex;
   height: 150px;
@@ -8,12 +10,20 @@
   &.dark {
     color: red;
   }
+
+  @include small-screen {
+    background-color: #aec1dba4;
+
+    &.dark {
+      background-color: rgba(0, 0, 0, 0.802);
+    }
+  }
 }
 
 .icon {
   height: 2rem;
   width: 2rem;
-  color: rgba(0, 0, 0, 0.599);
+  color: rgba(0, 0, 0, 0.733);
 
   &:hover {
     color: black;

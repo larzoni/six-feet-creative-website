@@ -26,6 +26,8 @@ export default function Home() {
             alt="Picture of the author"
             layout="fill"
             objectFit="cover"
+            priority
+            sizes="20"
           />
         </div>
       </main>

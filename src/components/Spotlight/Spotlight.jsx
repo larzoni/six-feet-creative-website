@@ -7,12 +7,15 @@ import { useTheme } from "@/context/ThemeContext";
 const Spotlight = () => {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isHovered ? 375 : 0;
+  const isSmallScreen = window.innerWidth <= 600;
+  const size = isHovered ? (isSmallScreen ? 300 : 375) : 0;
 
   const { isDarkMode } = useTheme();
 
   return (
-    <div className={styles.main}>
+    <div
+      className={`${styles.main} ${isDarkMode ? styles.dark : styles.light}`}
+    >
       <motion.div
         className={styles.mask}
         animate={{
