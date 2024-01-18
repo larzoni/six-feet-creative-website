@@ -1,3 +1,5 @@
+@import "../../app/styles/_media-queries.scss";
+
 .cardContainer {
   height: 100vh;
   display: flex;
@@ -17,10 +19,15 @@
     border-radius: 5px;
     padding: 50px;
     transform-origin: top;
+    margin: 1rem;
     h2 {
       text-align: center;
       margin: 0px;
       font-size: 28px;
+
+      @include small-screen {
+        font-size: 20px;
+      }
     }
     .body {
       display: flex;
@@ -28,10 +35,21 @@
       margin-top: 20px;
       gap: 50px;
 
+      @include small-screen {
+        margin-top: 10px;
+        gap: 0px;
+        flex-direction: column;
+      }
+      @include medium-screen {
+        gap: 10px;
+      }
+
       .description {
         width: 40%;
         position: relative;
         top: 10%;
+        max-height: 350px; // Adjust the value as needed
+        overflow-y: auto;
         p {
           font-size: 16px;
           &::first-letter {
@@ -49,9 +67,28 @@
             cursor: pointer;
           }
         }
+
+        @include small-screen {
+          padding: 0px;
+          width: 100%;
+          top: 10%;
+          margin: 0px;
+
+          // Make the description text scrollable with a maximum height
+          max-height: 300px; // Adjust the value as needed
+          overflow-y: auto;
+        }
+
+        @include medium-screen {
+          padding: 0px;
+          top: 0%;
+        }
       }
 
       .imageContainer {
+        @include small-screen {
+          display: none;
+        }
         position: relative;
         width: 60%;
         height: 100%;
