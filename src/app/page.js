@@ -1,13 +1,15 @@
 "use client";
+
 import Image from "next/image";
 import styles from "@/app/page.module.scss";
 import HomepageLogo from "@/components/HomepageLogo/HomepageLogo";
 import Spotlight from "@/components/Spotlight/Spotlight";
-import NavLinks from "@/components/NavLinks/NavLinks";
-import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "@/components/Navbar/Navbar";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Home() {
+  const { isDarkMode } = useTheme();
+
   return (
     <div>
       <Navbar />
@@ -15,12 +17,13 @@ export default function Home() {
       <main className={styles.container}>
         <div className={styles.content}>
           <HomepageLogo className={styles.homepageLogo} />
-          <NavLinks />
+
           <Spotlight />
-          <Footer />
         </div>
 
-        <div className={styles.imageWrapper}>
+        <div
+          className={`${styles.imageWrapper} ${isDarkMode ? styles.dark : ""}`}
+        >
           <Image
             src="/background.png"
             alt="Picture of the author"

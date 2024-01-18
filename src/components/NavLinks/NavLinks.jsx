@@ -1,13 +1,17 @@
+"use client";
+
 import React from "react";
 import styles from "@/components/NavLinks/NavLinks.module.scss";
 import Link from "next/link";
-import { useTheme } from "@/context/ThemeContext"; // Import useTheme
+import { useTheme } from "@/context/ThemeContext";
+import { Navbar } from "../Navbar/Navbar";
 
 const NavLinks = () => {
-  const { isDarkMode } = useTheme(); // Get isDarkMode from the theme context
+  const { isDarkMode } = useTheme();
 
   return (
     <nav className={`${styles.container} ${isDarkMode ? styles.dark : ""}`}>
+      <Navbar />
       <Link href="/">
         <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
           HOME

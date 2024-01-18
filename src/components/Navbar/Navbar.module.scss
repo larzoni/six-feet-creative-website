@@ -1,10 +1,9 @@
 .wrapper {
   display: flex;
   flex-direction: row;
-  padding: 1.5rem;
-  top: 0;
+  top: -0.2rem;
   position: fixed; /* Ensure relative positioning for absolute positioning of buttonContainer */
-  z-index: 2rem;
+  left: 0.1rem;
 }
 
 .buttonContainer {

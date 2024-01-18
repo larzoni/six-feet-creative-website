@@ -4,16 +4,31 @@
   position: relative;
   width: 100%;
   margin: 0rem auto;
-  background-color: #6f585524;
+  background-color: #6f585500;
   display: flex;
   flex-direction: column;
   align-items: center; /* Center content horizontally */
   justify-content: center; /* Center content vertically */
-  height: 100%; /* Ensure the .main container takes up full height */
+  height: 100%;
+
   @include small-screen {
-    background-color: #94a3b8fa;
+    background: linear-gradient(
+      360deg,
+      rgba(148, 163, 176, 1) 0%,
+      rgba(148, 163, 176, 1) 85%,
+      rgba(148, 163, 176, 0.8895465874233128) 88%,
+      rgba(148, 163, 176, 0.5858656058282208) 92%,
+      rgba(148, 163, 176, 0) 100%
+    );
     &.dark {
-      background-color: #020617;
+      background: linear-gradient(
+        360deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(2, 5, 25, 1) 85%,
+        rgba(2, 6, 24, 0.8895465874233128) 88%,
+        rgba(2, 6, 24, 0.5858656058282208) 92%,
+        rgba(2, 6, 23, 0) 100%
+      );
     }
   }
 }
@@ -34,6 +49,7 @@
   line-height: 40px;
   cursor: default;
   overflow: hidden;
+  padding-bottom: 10rem;
 
   @include small-screen {
     line-height: 2rem;

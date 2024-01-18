@@ -1,8 +1,10 @@
+"use client";
+
 import styles from "@/components/Footer/Footer.module.scss";
 import { InstagramLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { useTheme } from "@/context/ThemeContext";
 
-export const Footer = () => {
+const Footer = () => {
   const { isDarkMode } = useTheme();
 
   return (
@@ -30,3 +32,4 @@ export const Footer = () => {
     </footer>
   );
 };
+export default Footer;

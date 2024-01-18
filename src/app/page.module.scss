@@ -2,7 +2,8 @@
 
 .container {
   display: flex;
-  height: 100vh;
+  margin-top: 6vh;
+  height: 93vh;
 
   @include small-screen {
     flex-direction: column;
@@ -14,9 +15,32 @@
   width: 40vw;
   max-height: 100vh;
   position: relative;
+  z-index: 1;
 
   @include small-screen {
     display: none;
+  }
+}
+
+.imageWrapper:before {
+  &.dark {
+    background: linear-gradient(to left, rgba(2, 6, 23, 0), rgb(2, 6, 23));
+  }
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    rgba(148, 163, 184, 0),
+    rgb(148, 163, 184)
+  );
+  z-index: 2;
+
+  &.dark {
+    background: linear-gradient(to left, rgba(2, 6, 23, 0), rgb(2, 6, 23));
   }
 }
 
@@ -24,19 +48,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center the content */
+  justify-content: space-around; /* Vertically center the content */
 
   @include small-screen {
     height: 100%;
-  }
-}
-
-.homepageLogo {
-  margin-top: 2rem; // Adjust as needed
-
-  @include small-screen {
-    // Adjust the size for small screens
-    width: 80%; // You can adjust the percentage accordingly
   }
 }
 

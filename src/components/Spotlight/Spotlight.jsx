@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "@/components/Spotlight/Spotlight.module.scss";
 import useMousePosition from "@/utils/useMousePosition";
@@ -7,10 +7,25 @@ import { useTheme } from "@/context/ThemeContext";
 const Spotlight = () => {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const isSmallScreen = window.innerWidth <= 600;
-  const size = isHovered ? (isSmallScreen ? 300 : 375) : 0;
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [size, setSize] = useState(0);
 
   const { isDarkMode } = useTheme();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 600);
+      setSize(isHovered ? (isSmallScreen ? 240 : 300) : 0);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isHovered]);
 
   return (
     <div
@@ -19,7 +34,7 @@ const Spotlight = () => {
       <motion.div
         className={styles.mask}
         animate={{
-          WebkitMaskPosition: `${x - size / 2}px ${y - size * 1.6}px`,
+          WebkitMaskPosition: `${x - size / 2}px ${y - size * 1.7}px`,
           WebkitMaskSize: `${size}px`,
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
