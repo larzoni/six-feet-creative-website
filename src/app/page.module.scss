@@ -22,28 +22,6 @@
   }
 }
 
-.imageWrapper:before {
-  &.dark {
-    background: linear-gradient(to left, rgba(2, 6, 23, 0), rgb(2, 6, 23));
-  }
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0px;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(
-    to left,
-    rgba(148, 163, 184, 0),
-    rgb(148, 163, 184)
-  );
-  z-index: 2;
-
-  &.dark {
-    background: linear-gradient(to left, rgba(2, 6, 23, 0), rgb(2, 6, 23));
-  }
-}
-
 .content {
   flex: 1;
   display: flex;
