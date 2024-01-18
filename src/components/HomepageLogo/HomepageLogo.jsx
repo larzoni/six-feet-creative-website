@@ -1,3 +1,5 @@
+"use client";
+
 import { useTheme } from "../../context/ThemeContext";
 import styles from "@/components/HomepageLogo/HomepageLogo.module.scss";
 

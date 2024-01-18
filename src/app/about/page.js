@@ -9,6 +9,7 @@ import { useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
+import { Navbar } from "@/components/Navbar/Navbar";
 
 export default function About() {
   const container = useRef();
@@ -31,6 +32,7 @@ export default function About() {
   return (
     <div className={styles.container}>
       <div className={styles.nav}>
+        <Navbar />
         <NavLinks />
       </div>
 
