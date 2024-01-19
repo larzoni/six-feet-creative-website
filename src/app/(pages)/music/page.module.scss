@@ -1,0 +1,50 @@
+.video {
+  width: 100vw;
+  position: fixed;
+}
+
+.title {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 34px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding: 100px 50px 50px;
+  color: #fff;
+  background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.linkContainer {
+  position: absolute;
+  top: 20rem;
+  font-weight: 900;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  justify-content: center;
+  background-color: rgba(254, 254, 254, 0.694);
+  width: 100%;
+  padding: 10rem;
+}
+
+.link {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none; /* Add this line to remove underline */
+  letter-spacing: 0.7rem;
+
+  &:hover {
+    text-decoration: underline 10px; /* Add this line if you want underline on hover */
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: 1s;
+  }
+}
