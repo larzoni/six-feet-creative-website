@@ -9,18 +9,7 @@ export default function Music() {
   const { isDarkMode } = useTheme();
   return (
     <main className={styles.container}>
-      <video
-        src={"/bgcover.mp4"}
-        autoPlay
-        loop
-        controls={false}
-        className={styles.video}
-        muted
-      />
-      <div className={styles.overlay}></div>
       <section className={styles.content}>
-        <h1 className={styles.title}>Welcome</h1>
-
         <div className={styles.linkContainer}>
           <Link href="/music/pop">
             <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>

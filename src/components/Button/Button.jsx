@@ -2,7 +2,7 @@
 import { useTheme } from "@/context/ThemeContext";
 import styles from "@/components/Button/Button.module.scss";
 
-export const Button = ({
+const Button = ({
   onClick,
   icon: Icon,
   label,
@@ -24,3 +24,5 @@ export const Button = ({
     </button>
   );
 };
+
+export default Button;

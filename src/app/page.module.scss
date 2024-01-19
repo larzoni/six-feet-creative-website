@@ -1,32 +1,39 @@
 @import "../styles/_media-queries.scss";
 
+.layoutContainer {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.children {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
 .container {
   display: flex;
-  margin-top: 6vh;
-  height: 93vh;
+  height: 100vh;
 
   @include small-screen {
     flex-direction: column;
-    background: url("/background.png") center/cover no-repeat;
-  }
-}
-
-.imageWrapper {
-  width: 40vw;
-  max-height: 100vh;
-  position: relative;
-  z-index: 1;
-
-  @include small-screen {
-    display: none;
   }
 }
 
 .content {
-  flex: 1;
+  top: 0;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around; /* Vertically center the content */
+  position: absolute;
+  width: 100%;
+  height: 100vh;
 
   @include small-screen {
     height: 100%;
@@ -37,4 +44,23 @@
   @include small-screen {
     width: 100%; // Take up the full width on small screens
   }
+}
+
+.spotlight {
+  position: absolute;
+  width: 100%;
+  height: 80vh;
+  bottom: 0;
+
+  @include small-screen {
+    bottom: 10vh;
+  }
+}
+
+.buttonContainer {
+  position: absolute;
+  bottom: 0;
+  height: 30vh;
+  width: 100%;
+  text-align: center;
 }

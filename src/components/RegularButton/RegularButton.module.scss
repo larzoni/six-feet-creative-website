@@ -1,0 +1,68 @@
+.button {
+  position: absolute;
+  z-index: 4;
+  background: none;
+  border: none;
+  padding: 5px 15px;
+  font-size: 16px;
+  line-height: 24px;
+  width: 400;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+.shutter::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+/* shutter */
+.shutter {
+  border: 2px solid #111827;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 #111827;
+  font-size: 1.125rem;
+  font-weight: 700;
+  overflow: hidden;
+  color: #111827;
+
+  &.dark {
+    border: 2px solid white;
+    box-shadow: 3px 3px 0 white;
+    color: white;
+  }
+}
+.shutter::after,
+.shutter::before {
+  top: 0;
+  left: 0;
+  width: 90%;
+  aspect-ratio: 1;
+  background: #111827;
+  &.dark {
+    background: white;
+  }
+}
+.shutter::after {
+  transform: translate(-100%, -80%) rotate(30deg);
+}
+.shutter::before {
+  transform: translate(100%, 30%) rotate(30deg);
+}
+.shutter:hover::after {
+  transform: translate(-50%, -50%) rotate(30deg);
+}
+.shutter:hover::before {
+  transform: translate(30%, -10%) rotate(30deg);
+}
+.shutter:hover {
+  color: #eee;
+  box-shadow: 0 0 0;
+
+  &.dark {
+    color: rgb(254, 190, 28);
+  }
+}

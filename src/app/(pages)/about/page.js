@@ -2,14 +2,11 @@
 
 import Card from "@/components/Card/Card";
 import styles from "./page.module.scss";
-import { projects } from "@/app/about/data";
-import NavLinks from "@/components/NavLinks/NavLinks";
-import Image from "next/image";
+import { projects } from "./data";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
-import { Navbar } from "@/components/Navbar/Navbar";
 
 export default function About() {
   const container = useRef();
@@ -31,13 +28,8 @@ export default function About() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.nav}>
-        <Navbar />
-        <NavLinks />
-      </div>
-
       <div className={styles.headerWrapper}>
-        <h1>About Me</h1>
+        <h1>Scroll down to read</h1>
         <div className={styles.header}>
           <ArrowDownIcon className={styles.arrowDown} />
         </div>
@@ -58,14 +50,6 @@ export default function About() {
           );
         })}
       </main>
-      <div className={styles.imageWrapper}>
-        <Image
-          src="/about.png"
-          alt="Picture of the author"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
     </div>
   );
 }

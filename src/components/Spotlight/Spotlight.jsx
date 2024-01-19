@@ -34,7 +34,7 @@ const Spotlight = () => {
       <motion.div
         className={styles.mask}
         animate={{
-          WebkitMaskPosition: `${x - size / 2}px ${y - size * 1.7}px`,
+          WebkitMaskPosition: `${x - size / 2}px ${y - size * 1.15}px`,
           WebkitMaskSize: `${size}px`,
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
@@ -60,8 +60,8 @@ const Spotlight = () => {
             isDarkMode ? styles.dark : styles.light
           }`}
         >
-          Hello, My name is Helena.<br></br> I'm a <span>six feet</span> tall
-          and <span> creative </span>creator - with passion for writing and
+          Hello, My name is Helena. I'm a <span>six feet</span> tall and{" "}
+          <span> creative </span>creator - with passion for writing and
           producing both pop- and production music.
         </p>
       </div>

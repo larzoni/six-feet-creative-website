@@ -11,26 +11,26 @@
   justify-content: center; /* Center content vertically */
   height: 100%;
 
-  @include small-screen {
-    background: linear-gradient(
-      360deg,
-      rgba(148, 163, 176, 1) 0%,
-      rgba(148, 163, 176, 1) 85%,
-      rgba(148, 163, 176, 0.8895465874233128) 88%,
-      rgba(148, 163, 176, 0.5858656058282208) 92%,
-      rgba(148, 163, 176, 0) 100%
-    );
-    &.dark {
-      background: linear-gradient(
-        360deg,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(2, 5, 25, 1) 85%,
-        rgba(2, 6, 24, 0.8895465874233128) 88%,
-        rgba(2, 6, 24, 0.5858656058282208) 92%,
-        rgba(2, 6, 23, 0) 100%
-      );
-    }
-  }
+  // @include small-screen {
+  //   background: linear-gradient(
+  //     360deg,
+  //     rgba(148, 163, 176, 1) 0%,
+  //     rgba(148, 163, 176, 1) 85%,
+  //     rgba(148, 163, 176, 0.8895465874233128) 88%,
+  //     rgba(148, 163, 176, 0.5858656058282208) 92%,
+  //     rgba(148, 163, 176, 0) 100%
+  //   );
+  //   &.dark {
+  //     background: linear-gradient(
+  //       360deg,
+  //       rgba(2, 0, 36, 1) 0%,
+  //       rgba(2, 5, 25, 1) 85%,
+  //       rgba(2, 6, 24, 0.8895465874233128) 88%,
+  //       rgba(2, 6, 24, 0.5858656058282208) 92%,
+  //       rgba(2, 6, 23, 0) 100%
+  //     );
+  //   }
+  // }
 }
 
 .mask,
@@ -50,6 +50,7 @@
   cursor: default;
   overflow: hidden;
   padding-bottom: 10rem;
+  font-size: 1.5rem;
 
   @include small-screen {
     line-height: 2rem;
@@ -66,10 +67,9 @@
 }
 
 .paragraph {
-  max-width: 25rem; /* Adjust max-width as needed */
   padding: 1.25rem; /* Adjust padding as needed */
   margin: 0;
-  font-size: 1.375rem;
+  max-width: 500px;
 
   &.light {
     color: black;
@@ -88,14 +88,13 @@
   }
   @include small-screen {
     font-size: 1.125rem;
-    max-width: 300;
+    max-width: 400px;
   }
 }
 .paragraphMask {
-  max-width: 400px; /* Adjust max-width as needed */
-  padding: 20px; /* Adjust padding as needed */
+  padding: 1.25rem; /* Adjust padding as needed */
   margin: 0;
-  font-size: 22px;
+  max-width: 500px;
 
   &.light {
     color: rgb(255, 255, 255);
@@ -110,6 +109,6 @@
   }
   @include small-screen {
     font-size: 1.125rem;
-    max-width: 300px; /* Adjust max-width as needed */
+    max-width: 400px; /* Adjust max-width as needed */
   }
 }

@@ -7,13 +7,12 @@
   justify-content: center;
   align-items: center;
   position: sticky;
-  top: 0px;
+  top: 0;
 
   .card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: 5%;
     height: 500px;
     width: 1000px;
     border-radius: 5px;
@@ -21,6 +20,10 @@
     transform-origin: top;
     margin: 3rem;
     background-color: #a88b8b;
+
+    @include small-screen {
+      margin: 0rem;
+    }
 
     h2 {
       text-align: center;

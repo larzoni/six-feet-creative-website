@@ -11,7 +11,6 @@ export default function Card({
   title,
   description,
   src,
-  link,
   color,
   darkcolor,
   progress,

@@ -1,10 +1,11 @@
 // ThemeToggleBtn.js
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "../../context/ThemeContext";
-import { Button } from "../Button/Button";
-import styles from "@/components/ThemeToggleBtn/ThemeToggleBtn.module.scss";
 
-export const ThemeToggleBtn = () => {
+import styles from "@/components/ThemeToggleBtn/ThemeToggleBtn.module.scss";
+import Button from "../Button/Button";
+
+const ThemeToggleBtn = () => {
   const { toggleTheme, isDarkMode } = useTheme();
 
   const buttonClassName = `${isDarkMode ? styles.dark : ""} ${
@@ -23,3 +24,5 @@ export const ThemeToggleBtn = () => {
     />
   );
 };
+
+export default ThemeToggleBtn;
