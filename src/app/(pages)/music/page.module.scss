@@ -1,6 +1,25 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
 .video {
-  width: 100vw;
-  position: fixed;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #ffffff3a;
 }
 
 .title {
@@ -14,35 +33,29 @@
   background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 .linkContainer {
   position: absolute;
   top: 20rem;
   font-weight: 900;
   display: flex;
   flex-direction: row;
-  gap: 5rem;
-  justify-content: center;
-  background-color: rgba(254, 254, 254, 0.694);
+  gap: 2rem;
+  justify-content: space-evenly;
+  background-color: rgba(152, 152, 152, 0.842);
   width: 100%;
-  padding: 10rem;
+  height: 40%;
+  padding: 2rem;
+  color: #000;
 }
 
 .link {
   color: rgb(0, 0, 0);
-  font-size: 16px;
-  padding: 10px;
+  font-size: 1rem;
   text-decoration: none; /* Add this line to remove underline */
   letter-spacing: 0.7rem;
 
   &:hover {
-    text-decoration: underline 10px; /* Add this line if you want underline on hover */
+    text-decoration: underline 1px; /* Add this line if you want underline on hover */
     font-weight: 600;
     margin-top: 1rem;
     transition: 1s;

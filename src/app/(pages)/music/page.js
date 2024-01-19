@@ -17,23 +17,24 @@ export default function Music() {
         className={styles.video}
         muted
       />
+      <div className={styles.overlay}></div>
+      <section className={styles.content}>
+        <h1 className={styles.title}>Welcome</h1>
 
-      <div className={styles.title}>
-        <h1>Welcome</h1>
-      </div>
-      <div className={styles.linkContainer}>
-        <Link href="/music/pop">
-          <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
-            POP MUSIC
-          </span>
-        </Link>
-        |
-        <Link href="/music/pop">
-          <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
-            PRODUCTION MUSIC
-          </span>
-        </Link>
-      </div>
+        <div className={styles.linkContainer}>
+          <Link href="/music/pop">
+            <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
+              POP MUSIC
+            </span>
+          </Link>
+          |
+          <Link href="/music/production">
+            <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
+              PRODUCTION MUSIC
+            </span>
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
