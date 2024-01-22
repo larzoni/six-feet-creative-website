@@ -18,13 +18,6 @@
 
   @include small-screen {
     display: none;
-    font-size: 14px;
-    padding: 1.5rem;
-    gap: 1rem;
-
-    &.dark {
-      background-color: rgb(129, 62, 11);
-    }
   }
 
   @include medium-screen {
