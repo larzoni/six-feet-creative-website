@@ -29,7 +29,7 @@ export default function About() {
   return (
     <div className={styles.container}>
       <div className={styles.headerWrapper}>
-        <h1>Scroll down to read</h1>
+        <h2>Scroll down to read</h2>
         <div className={styles.header}>
           <ArrowDownIcon className={styles.arrowDown} />
         </div>

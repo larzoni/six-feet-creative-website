@@ -1,0 +1,122 @@
+@import "../../styles/_media-queries.scss";
+
+.container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  height: 4rem;
+  gap: 7.5rem;
+  background-color: rgb(198, 198, 198);
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  z-index: 2;
+
+  &.dark {
+    background-color: rgb(129, 62, 11);
+  }
+
+  .hamburgerIcon {
+    display: none;
+    cursor: pointer;
+
+    &:hover {
+      scale: 1.2;
+      color: green;
+    }
+  }
+
+  .mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(190, 190, 190, 0.975);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    color: black;
+
+    &.dark {
+      background-color: rgba(0, 0, 0, 0.965);
+      color: white;
+    }
+
+    .closeMenu {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      padding: 1.5rem;
+
+      &:hover {
+        color: red;
+        transition: 1s;
+      }
+    }
+
+    .link {
+      color: black;
+      font-size: 16px;
+      padding: 10px;
+      text-decoration: none;
+      letter-spacing: 0.7rem;
+
+      &.dark {
+        color: white;
+      }
+
+      &:hover {
+        text-decoration: underline 10px;
+        font-weight: 600;
+        margin-top: 1rem;
+        transition: 1s;
+      }
+    }
+  }
+
+  @include medium-screen {
+    font-size: 14px;
+    padding: 1.5rem;
+    gap: 1rem;
+
+    &.dark {
+      background-color: rgb(129, 62, 11);
+    }
+
+    .hamburgerIcon {
+      display: block;
+    }
+
+    .link {
+      font-size: 10px;
+      padding: 2px;
+      letter-spacing: 0.2rem;
+    }
+  }
+}
+
+.link {
+  color: black;
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none;
+  letter-spacing: 0.7rem;
+
+  &.dark {
+    color: white;
+  }
+
+  &:hover {
+    text-decoration: underline 10px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: 1s;
+  }
+}

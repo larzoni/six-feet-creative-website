@@ -1,18 +1,74 @@
-.wrapper {
+@import "../../styles/_media-queries.scss";
+
+.container {
+  position: fixed;
+  top: 0;
   display: flex;
-  flex-direction: row;
-  top: -0.2rem;
-  position: fixed; /* Ensure relative positioning for absolute positioning of buttonContainer */
-  left: 0.1rem;
+  height: 4rem;
+  gap: 7.5rem;
+  background-color: rgb(198, 198, 198);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 2;
+
+  &.dark {
+    background-color: rgb(129, 62, 11);
+  }
+
+  @include small-screen {
+    display: none;
+    font-size: 14px;
+    padding: 1.5rem;
+    gap: 1rem;
+
+    &.dark {
+      background-color: rgb(129, 62, 11);
+    }
+  }
+
+  @include medium-screen {
+    gap: 2rem;
+  }
+
+  @include large-screen {
+    gap: 2rem;
+  }
 }
 
-.buttonContainer {
-  position: absolute;
-  justify-self: center;
-  top: 1rem;
-  left: 1rem;
-}
+.link {
+  color: black;
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none; /* Add this line to remove underline */
+  letter-spacing: 0.7rem;
 
-.button {
-  margin-left: 0;
+  &.dark {
+    color: white;
+  }
+
+  &:hover {
+    text-decoration: underline 10px; /* Add this line if you want underline on hover */
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: 1s;
+  }
+
+  @include small-screen {
+    font-size: 10px;
+    padding: 2px;
+    letter-spacing: 0.2rem;
+  }
+
+  @include medium-screen {
+    font-size: 14px;
+    padding: 2px;
+    letter-spacing: 0.2rem;
+  }
+
+  @include large-screen {
+    font-size: 14px;
+    padding: 2px;
+    letter-spacing: 0.2rem;
+  }
 }

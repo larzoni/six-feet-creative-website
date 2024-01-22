@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  top: -0.2rem;
+  position: fixed; /* Ensure relative positioning for absolute positioning of buttonContainer */
+  left: 0.1rem;
+}
+
+.buttonContainer {
+  position: absolute;
+  justify-self: center;
+  top: 1rem;
+  left: 1rem;
+}
+
+.button {
+  margin-left: 0;
+}

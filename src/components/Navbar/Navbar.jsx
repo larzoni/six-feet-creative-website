@@ -1,13 +1,39 @@
-import React from "react";
-import styles from "@/components/Navbar/Navbar.module.scss";
-import ThemeToggleBtn from "../ThemeToggleBtn/ThemeToggleBtn";
+"use client";
 
-export const Navbar = () => {
+import React from "react";
+import styles from "./Navbar.module.scss";
+import Link from "next/link";
+import { useTheme } from "@/context/ThemeContext";
+import { NavToggleTheme } from "../NavToggleTheme/NavToggleTheme";
+
+const Navbar = () => {
+  const { isDarkMode } = useTheme();
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.buttonContainer}>
-        <ThemeToggleBtn className={styles.button} />
-      </div>
-    </div>
+    <nav className={`${styles.container} ${isDarkMode ? styles.dark : ""}`}>
+      <NavToggleTheme />
+      <Link href="/">
+        <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
+          HOME
+        </span>
+      </Link>
+      <Link href="/music">
+        <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
+          MUSIC
+        </span>
+      </Link>
+      <Link href="/about">
+        <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
+          ABOUT ME
+        </span>
+      </Link>
+      <Link href="/contact">
+        <span className={`${styles.link} ${isDarkMode ? styles.dark : ""}`}>
+          CONTACT
+        </span>
+      </Link>
+    </nav>
   );
 };
+
+export default Navbar;

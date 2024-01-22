@@ -1,15 +1,13 @@
 import React from "react";
+import styles from "./page.module.scss";
 
 export default function Production() {
   const iframeStyle = {
     borderRadius: "12px",
-    height: "400px",
+    height: "500px",
   };
   return (
-    <div>
-      <div>
-        <h1>Production music</h1>
-      </div>
+    <div className={styles.container}>
       <iframe
         style={iframeStyle}
         src="https://open.spotify.com/embed/playlist/2AfpIqQ7a93pUczqLJhDCh?utm_source=generator&theme=0"

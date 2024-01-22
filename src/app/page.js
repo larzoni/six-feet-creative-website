@@ -17,7 +17,7 @@ export default function Home() {
     <div>
       <main className={styles.container}>
         <div className={styles.content}>
-          <HomepageLogo className={styles.homepageLogo} />
+          <HomepageLogo />
         </div>
 
         <div className={styles.spotlight}>
