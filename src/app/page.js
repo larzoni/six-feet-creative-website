@@ -14,15 +14,12 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <main className={styles.container}>
-        <div className={styles.content}>
-          <HomepageLogo />
-        </div>
-
-        <div className={styles.spotlight}>
-          <Spotlight />
-        </div>
+    <main>
+      <div className={styles.homepageLogo}>
+        <HomepageLogo />
+      </div>
+      <div className={styles.container}>
+        <Spotlight />
         <div className={styles.buttonContainer}>
           <RegularButton
             label={"music button"}
@@ -30,7 +27,7 @@ export default function Home() {
             text={"Check out my music"}
           />
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

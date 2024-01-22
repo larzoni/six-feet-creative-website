@@ -1,9 +1,5 @@
 @import "../../../styles/_media-queries.scss";
 
-.container {
-  position: relative;
-}
-
 .cards {
   position: relative;
 
@@ -48,14 +44,6 @@
   @include medium-screen {
     width: 30%;
   }
-}
-
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2;
 }
 
 .arrowDown {

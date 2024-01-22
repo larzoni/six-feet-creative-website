@@ -2,11 +2,13 @@
 
 .wrapper {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
 }
 
 .logo {
-  align-self: center;
   width: 27rem;
   height: auto;
   margin: 4rem 0rem 2rem 0rem;

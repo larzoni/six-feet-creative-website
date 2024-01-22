@@ -34,7 +34,7 @@ const Spotlight = () => {
       <motion.div
         className={styles.mask}
         animate={{
-          WebkitMaskPosition: `${x - size / 2}px ${y - size * 1.2}px`,
+          WebkitMaskPosition: `${x - size / 2}px ${y - size * 0.5}px`,
           WebkitMaskSize: `${size}px`,
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
